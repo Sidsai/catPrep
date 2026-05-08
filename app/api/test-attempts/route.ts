@@ -20,10 +20,6 @@ export async function POST(request: NextRequest) {
     const {
       practice_test_id,
       score,
-      total_questions,
-      correct_answers,
-      incorrect_answers,
-      unanswered,
       time_spent_minutes,
       accuracy_percentage,
       questions_data,
@@ -35,26 +31,16 @@ export async function POST(request: NextRequest) {
         user_id,
         practice_test_id,
         score,
-        total_questions,
-        correct_answers,
-        incorrect_answers,
-        unanswered,
         time_spent_minutes,
         accuracy_percentage,
-        started_at,
         completed_at
       )
       VALUES (
         ${userId},
         ${practice_test_id},
         ${score},
-        ${total_questions},
-        ${correct_answers},
-        ${incorrect_answers},
-        ${unanswered},
         ${time_spent_minutes},
         ${accuracy_percentage},
-        NOW(),
         NOW()
       )
       RETURNING *
